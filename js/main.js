@@ -15,41 +15,20 @@
     // Called when a photo is successfully retrieved
     //
     function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64-encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
+      // cria um novo elemento img (html)
+      var image = $('img');
+      image.addClass('img-thumbnail');
+      image.src = "data:image/jpeg;base64," + imageData;
+      image.appendTo($('#images'));
     }
 
     // Called when a photo is successfully retrieved
     //
     function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
+      var image = $('img');
+      image.addClass('img-thumbnail');
+      image.src = imageURI;
+      image.appendTo($('#images'));
     }
 
     // A button will call this function
@@ -80,5 +59,5 @@
     // Called if something bad happens.
     //
     function onFail(message) {
-      alert('Failed because: ' + message);
+      alert('Falha: ' + message);
     }
