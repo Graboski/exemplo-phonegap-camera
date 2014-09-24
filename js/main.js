@@ -18,7 +18,7 @@
       // cria um novo elemento img (html)
       var image = $('<img>');
       image.addClass('img-thumbnail');
-      image.src = "data:image/jpeg;base64," + imageData;
+      image.attr('src', "data:image/jpeg;base64," + imageData);
       image.attr('width', '300px;');
       image.attr('height', '300px;');
       image.appendTo($('#images'));
@@ -29,7 +29,7 @@
     function onPhotoURISuccess(imageURI) {
       var image = $('<img>');
       image.addClass('img-thumbnail');
-      image.src = imageURI;
+      image.attr('src', imageURI);
       image.attr('width', '300px;');
       image.attr('height', '300px;');
       image.appendTo($('#images'));
