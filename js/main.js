@@ -16,23 +16,27 @@
     //
     function onPhotoDataSuccess(imageData) {
       // cria um novo elemento img (html)
-      var image = $('<img>');
-      image.addClass('img-thumbnail');
+      var image = newImage();
       image.attr('src', "data:image/jpeg;base64," + imageData);
-      image.attr('width', '300px;');
-      image.attr('height', '300px;');
-      image.appendTo($('#images'));
     }
 
     // Called when a photo is successfully retrieved
     //
     function onPhotoURISuccess(imageURI) {
+      var image = newImage();
+      image.attr('src', imageURI);
+    }
+
+    // Create a new <img> element and appends it on container
+    //
+    function newImage() {
       var image = $('<img>');
       image.addClass('img-thumbnail');
-      image.attr('src', imageURI);
       image.attr('width', '300px;');
       image.attr('height', '300px;');
       image.appendTo($('#images'));
+
+      return image;
     }
 
     // A button will call this function
