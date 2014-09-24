@@ -16,7 +16,7 @@
     //
     function onPhotoDataSuccess(imageData) {
       // cria um novo elemento img (html)
-      var image = $('img');
+      var image = $('<img>');
       image.addClass('img-thumbnail');
       image.src = "data:image/jpeg;base64," + imageData;
       image.appendTo($('#images'));
@@ -25,7 +25,7 @@
     // Called when a photo is successfully retrieved
     //
     function onPhotoURISuccess(imageURI) {
-      var image = $('img');
+      var image = $('<img>');
       image.addClass('img-thumbnail');
       image.src = imageURI;
       image.appendTo($('#images'));
